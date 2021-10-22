@@ -1,5 +1,5 @@
 {
-  "name": "jest-aws",
+  "name": "@jest-cloud/aws",
   "scripts": {
     "clobber": "npx projen clobber",
     "compile": "npx projen compile",
@@ -21,10 +21,12 @@
     "projen": "npx projen"
   },
   "devDependencies": {
+    "@jest/types": "^27.1.1",
     "@types/jest": "^27.0.1",
-    "@types/node": "^10.17.0",
+    "@types/node": "^12.19.0",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
+    "aws-xray-sdk": "^3.3.3",
     "eslint": "^7.32.0",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^2.4.0",
@@ -38,7 +40,23 @@
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.3"
   },
+  "peerDependencies": {
+    "aws-xray-sdk": "^3.3.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cloudwatch-logs": "^3.31.0",
+    "@aws-sdk/client-xray": "^3.31.0",
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "express": "^4.17.1",
+    "got": "^11.8.2",
+    "jest-environment-node": "^27.1.1",
+    "winston": "^3.3.3"
+  },
   "bundledDependencies": [],
+  "engines": {
+    "node": ">= 12.19.0"
+  },
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "version": "0.0.0",
